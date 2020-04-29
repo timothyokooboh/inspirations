@@ -1,0 +1,138 @@
+<template>
+  <div>
+
+    <div>
+      <img src="/images/smallScreenMenu.svg" alt="menu bar for small screens" id="small-screen-menu" @click="showLeftMenuArea()">
+    </div>
+
+    <div class="left-menu-area" id="slide-bar-menu" >
+      <div class="left-menu-item1-container">
+
+        <div class="left-menu-item1">
+          <div> 
+            <img src="/images/home.svg" alt="" class="left-menu-icon">
+          </div>
+          <div class="left-menu-item1-text"> 
+            <a :href = "dashboardRoute" > DASHBOARD </a>
+          </div>
+        </div>
+
+        <div class="left-menu-item1">
+          <div> 
+            <img src="/images/profile.png" alt="" class="left-menu-icon">
+          </div>
+          <div class="left-menu-item1-text"> 
+            <a :href = "viewProfileRoute"> VIEW PROFILE </a>
+          </div>
+        </div>
+
+        <div class="left-menu-item1">
+          <div> 
+            <img src="/images/posts.png" alt="" class="left-menu-icon">
+          </div>
+          <div class="left-menu-item1-text"> POSTS </div>
+        </div>
+
+        <div class="left-menu-item1">
+          <div> 
+            <img src="/images/draft.png" alt="" class="left-menu-icon">
+          </div>
+          <div class="left-menu-item1-text"> DRAFTS </div>
+        </div>
+
+        <div class="left-menu-item1">
+          <div> 
+            <img src="/images/followers.svg" alt="users icon" class="left-menu-icon">
+          </div>
+          <div class="left-menu-item1-text"> FOLLOWERS </div>
+        </div>
+
+        <div class="left-menu-item1">
+          <div> 
+            <img src="/images/following.svg" alt="users icon" class="left-menu-icon">
+          </div>
+          <div class="left-menu-item1-text"> FOLLOWING </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default {
+    props: ['dashboardRoute', 'viewProfileRoute'],
+    methods: {
+      showLeftMenuArea() {
+        const leftMenuArea = document.getElementById('slide-bar-menu')
+        if(window.innerWidth <= 754 && leftMenuArea.style.display == 'block') {
+          leftMenuArea.style.display='none'
+        } else {
+          leftMenuArea.style.display = 'block' 
+        }    
+      }
+    },
+    mounted () {
+      window.addEventListener('resize', () => {
+        const leftMenuArea = document.getElementById('slide-bar-menu') 
+        if(window.innerWidth > 754) {
+          leftMenuArea.style.display = 'none' 
+        } 
+      })
+    }
+  }
+</script>
+<style scoped>
+   #slide-bar-menu {
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+  }
+  #small-screen-menu {
+    width: 25px;
+    height: 25px;
+    display: none;
+  }
+  .left-menu-area {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: #501A3E
+  }
+  .left-menu-item1-container {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-content: start;
+  }
+  .left-menu-item1 {
+    display: flex;
+    margin-top: 50px;
+  }
+  .left-menu-item1-text {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #FAF0F8;
+  }
+  .left-menu-item1-text a {
+    color: #FAF0F8;
+  }
+  .left-menu-item1-text a:hover {
+    color: #FAF0C8;
+    text-decoration: none;
+  }
+  .left-menu-icon {
+    width: 24px;
+    height: 27px;
+  }
+   @media (max-width: 754px) {
+    .left-menu-area {
+      display: none;
+    }
+    #small-screen-menu {
+      display: block;
+      cursor: pointer;
+      margin-left: 15px;
+      margin-bottom: 20px;
+    }
+  }
+</style>
