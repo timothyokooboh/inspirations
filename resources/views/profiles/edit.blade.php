@@ -23,6 +23,7 @@
     align-items: baseline;
   }
   #picture {
+    object-fit: cover;
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -142,6 +143,7 @@
 
   @media (max-width: 500px) {
     #picture {
+      object-fit: cover;
       width: 100px;
       height: 100px;
       border-radius: 50%;
@@ -161,6 +163,10 @@
   <slide-menu
       dashboard-route="{{route('home')}}" 
       view-profile-route="{{route('profiles.show', ['id' => $profile->id])}}"
+      posts-route="{{route('posts.index')}}"
+      drafts-route="{{route('drafts.index')}}"
+      followers-route = "{{route('follows.followers')}}"
+      following-route = "{{route('follows.following')}}"
   >
   </slide-menu>
 
@@ -168,6 +174,10 @@
   <left-menu
     dashboard-route="{{route('home')}}" 
     view-profile-route="{{route('profiles.show', ['id' => $profile->id])}}"
+    posts-route="{{route('posts.index')}}"
+    drafts-route="{{route('drafts.index')}}"
+    followers-route = "{{route('follows.followers')}}"
+    following-route = "{{route('follows.following')}}"
   >
   </left-menu>
 

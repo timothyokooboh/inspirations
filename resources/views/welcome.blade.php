@@ -6,10 +6,6 @@
     body {    
         margin: 0;
         color: #FAF0F8;
-        /* color pallete
-        bg color ... #501A3E
-        body text ... #FAF0F8
-        headline ... #A71077 */
         -ms-overflow-style: none;
         overflow-Y: scroll;
         box-sizing: border-box;
@@ -26,7 +22,6 @@
             rgba(80, 26, 62, 0.69) 76%), 
             url('/images/laughter.jpg');
             background-size: cover;
-            //background-position: center center;
             width: 100%;
             height: 100vh;
     }
@@ -167,22 +162,22 @@
         <div>
             <h2>Are you a Covid-19 survivor?</h2>
             <h4>Share your story. Someone needs to hear it to keep hope alive.</h4>
-            <div><a href="">See all stories</a></div>
+            <div><a href="{{ route('allstories') }}">See all stories</a></div>
         </div>
         <div>
             <h2>Are you a breast cancer survivor?</h2>
             <h4>Share your experience. Uplift a soul.</h4>
-            <div><a href="">See all stories</a></div>
+            <div><a href="{{ route('allstories') }}">See all stories</a></div>
         </div>
         <div>
-            <h2>Finally got your dream job after several rejections?</h2>
-            <h4>Share your story. Inspire someone.</h4>
-            <div><a href="">See all stories</a></div>
+            <h2> Finally got your dream job? </h2>
+            <h4> Share your story. Inspire someone. </h4>
+            <div><a href="{{ route('allstories') }}">See all stories</a></div>
         </div>
         <div>
             <h2>What success secrets have paved a way for you?</h2>
             <h4>Share your knowledge. Sharing is caring.</h4>
-            <div><a href="">See all stories</a></div>
+            <div><a href="{{ route('allstories') }}">See all stories</a></div>
         </div>
     </div>
     <div class="bottom-landing-view">
@@ -197,10 +192,13 @@
     </div>
     <div class="footer">
         <div>
-            <a href="">Contact</a>
+            <a href="{{route('contacts.create')}}"> Contact </a>
         </div>
         <div>
-            <a href="">Privacy policy</a>
+            <a href="{{route('pages.about')}}"> About </a>
+        </div>
+        <div>
+            <a href="{{route('pages.privacypolicy')}}">Privacy policy</a>
         </div>
         <div>
             <a href="https://timothyokooboh.github.io/portfolio/dist/">Developer</a>

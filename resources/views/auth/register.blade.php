@@ -46,13 +46,15 @@
             font-weight: bold;
         }
         input:focus {
-            outline: 3px solid #501A3E;
+            outline: 3px solid #FAF0F8;
             border-color: transparent
         }
         input[type=submit] {
-            color: #FAF0F8;
-            background-color: #501A3E;
+            color: #501A3E;
+            background-color: #FAF0F8;
             letter-spacing: 1.08px; 
+            border: none;
+            font-size: 18px;p
         }
         input[type=submit]:focus {
             outline: 2px dotted #501A3E;

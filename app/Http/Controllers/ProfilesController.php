@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
@@ -54,8 +55,12 @@ class ProfilesController extends Controller
     public function show($id)
     {
         $profile = Profile::findOrFail($id);
+
+        $follows = (auth()->user()) ? auth()->user()->following->contains($profile->id) : false;
+
+        //dd($follows);
         
-        return view('profiles.show')->with('profile', $profile);
+        return view('profiles.show')->with(['profile' => $profile, 'follows' => $follows]);
     }
 
     /**
@@ -118,9 +123,10 @@ class ProfilesController extends Controller
           $profile->phone = $request['phone'];
           $profile->country = $request['country'];
           $profile->state = $request['state'];
-                    if($request->hasFile('profilePicture')){
-          $profile->profilePicture = $fileNameToStore;
-                    }
+        if ($request->hasFile('profilePicture')) {
+            Storage::delete('public/profilePictures/'.$profile->profilePicture);
+            $profile->profilePicture = $fileNameToStore;
+        }
             
           $profile->save();
  

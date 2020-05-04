@@ -52,17 +52,19 @@
         .call-to-action {
           margin-top: 20px;
         }
-        .edit-profile, .follow {
+        .edit-profile {
           background-color: #501A3E;
           border-radius: 4px;
+          border:none;
           outline: none;
           letter-spacing: 1.08px;
+          font-size: 14px;
         }
-        .edit-profile a, .follow a {
+        .edit-profile a {
           text-decoration: none;
           color: #FAF0F8;
         }
-        .edit-profile a:hover, .follow a:hover {
+        .edit-profile a:hover {
           text-decoration: none;
           color: #FAF0F8;
         }
@@ -125,13 +127,21 @@
   <slide-menu
     dashboard-route="{{route('home')}}" 
     view-profile-route="{{route('profiles.show', ['id' => $profile->id])}}"
+    posts-route="{{route('posts.index')}}"
+    drafts-route="{{route('drafts.index')}}"
+    followers-route = "{{route('follows.followers')}}"
+    following-route = "{{route('follows.following')}}"
   >
   </slide-menu>
 
   <div class="main-grid-container">
     <left-menu 
       dashboard-route="{{route('home')}}" 
-      view-profile-route="{{route('profiles.show', ['id' => $profile->id])}}"
+      view-profile-route="{{route('profiles.show', ['id' => auth()->user()->id])}}"
+      posts-route="{{route('posts.index')}}"
+      drafts-route="{{route('drafts.index')}}"
+      followers-route = "{{route('follows.followers')}}"
+      following-route = "{{route('follows.following')}}"
     >
     </left-menu>  
     
@@ -148,29 +158,52 @@
         <div class="account-nomenclature">
           {{$profile->firstName}} {{$profile->lastName}} <br>
           <img src="/images/location.svg" class="icon"> {{$profile->state}}, {{$profile->country}}
+          <div class="call-to-action">
+            @if(auth()->user()->profile->id == $profile->id )
+              <button class="edit-profile"> 
+                <a href="{{route('profiles.edit', ['id' => $profile->id])}}"> EDIT PROFILE </a>
+              </button>
+            @else 
+              <follow-button
+                user-id = "{{$profile->user_id}}"
+                follows = {{$follows}}
+              >
+              </follow-button>
+            @endif
+          </div>
         </div>
       </div>
 
       <div class="account-info-title"> ACCOUNT INFORMATION </div>
       <div class="account-info" > 
-        <div>  <span class="account-info-description"> Phone: </span> {{$profile->phone}} </div>
-        <div>  <span class="account-info-description"> Email: </span> {{$profile->user->email}} </div>
-        <div>  <span class="account-info-description"> Member since: </span> {{date("F j, Y", strtotime($profile->user->created_at))}} </div>
-        <div>  <span class="account-info-description"> Posts: </span> </div>
-        <div>  <span class="account-info-description"> Followers: </span> </div>
-        <div> <span class="account-info-description"> Following: </span> </div>
-      </div>
+        <div>  
+          <span class="account-info-description"> Phone: </span> {{$profile->phone}} 
+        </div>
 
-      <div class="call-to-action">
-        @if(auth()->user()->profile->id == $profile->id )
-          <button class="edit-profile"> 
-            <a href="{{route('profiles.edit', ['id' => $profile->id])}}"> EDIT PROFILE </a>
-          </button>
-          @else 
-            <button class="follow"> 
-              <a href=""> FOLLOW </a>
-            </button>
-          @endif
+        <div>  
+          <span class="account-info-description"> Email: </span> {{$profile->user->email}} 
+        </div>
+
+        <div>  
+          <span class="account-info-description"> Member since: </span> {{date("F j, Y", strtotime($profile->user->created_at))}} 
+        </div>
+
+        <div>  
+          <span class="account-info-description"> Posts: </span> {{DB::table('posts')->where(['user_id'=> $profile->user_id, 'mode' => 'Public'])->count()}} 
+        </div>
+
+        <div>  
+          <span class="account-info-description"> Drafts: </span> {{DB::table('posts')->where(['user_id'=> $profile->user_id, 'mode' => 'Private'])->count()}} 
+        </div>
+
+        <div>  
+          <span class="account-info-description"> Followers: {{$profile->followers->count()}} </span> 
+        </div>
+
+        <div> 
+          <span class="account-info-description"> Following: {{$profile->user->following->count()}} </span> 
+        </div>
+
       </div>
 
     </div> 

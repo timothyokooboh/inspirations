@@ -28,3 +28,29 @@ Route::get('/profiles/{id}', 'ProfilesController@show')->name('profiles.show')->
 Route::resource('posts', 'PostsController');
 Route::get('/posts/create', 'PostsController@create')->name('posts.create')->middleware('auth');
 Route::get('/posts/{id}', 'PostsController@show')->name('posts.show');
+Route::get('/posts', 'PostsController@index')->name('posts.index')->middleware('auth');
+Route::get('/posts/{id}/edit', 'PostsController@edit')->name('posts.edit')->middleware('auth');
+Route::patch('/posts/{id}', 'PostsController@update')->name('posts.patch')->middleware('auth');
+Route::delete('/posts/{id}', 'PostsController@destroy')->name('posts.delete')->middleware('auth');
+
+Route::get('/drafts', 'DraftsController@index')->name('drafts.index')->middleware('auth');
+
+Route::get('/allstories', 'StoriesController@allStories')->name('allstories');
+Route::get('/newstories', 'StoriesController@newStories')->name('newstories');
+
+Route::resource('comments', 'CommentsController');
+Route::post('comments/store/{id}', 'CommentsController@store');
+
+Route::post('follow/{id}', 'FollowsController@store');
+Route::get('/followers', 'FollowsController@followers')->name('follows.followers');
+Route::get('/following', 'FollowsController@following')->name('follows.following');
+
+Route::post('like/{id}', 'LikesController@store');
+
+Route::get('/about', 'PagesController@about')->name('pages.about');
+Route::get('/privacypolicy', 'PagesController@privacypolicy')->name('pages.privacypolicy');
+
+Route::resource('contacts', 'ContactsController');
+Route::get('/contacts/create', 'ContactsController@create')->name('contacts.create');
+Route::post('/contacts', 'ContactsController@store')->name('contacts.store');
+

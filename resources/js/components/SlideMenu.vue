@@ -30,28 +30,36 @@
           <div> 
             <img src="/images/posts.png" alt="" class="left-menu-icon">
           </div>
-          <div class="left-menu-item1-text"> POSTS </div>
+          <div class="left-menu-item1-text"> 
+            <a :href ="postsRoute"> POSTS </a>
+          </div>
         </div>
 
         <div class="left-menu-item1">
           <div> 
             <img src="/images/draft.png" alt="" class="left-menu-icon">
           </div>
-          <div class="left-menu-item1-text"> DRAFTS </div>
+          <div class="left-menu-item1-text"> 
+            <a :href = "draftsRoute"> DRAFTS </a>
+            </div>
         </div>
 
         <div class="left-menu-item1">
           <div> 
             <img src="/images/followers.svg" alt="users icon" class="left-menu-icon">
           </div>
-          <div class="left-menu-item1-text"> FOLLOWERS </div>
+          <div class="left-menu-item1-text"> 
+            <a :href="followersRoute"> FOLLOWERS </a>
+          </div>
         </div>
 
         <div class="left-menu-item1">
           <div> 
             <img src="/images/following.svg" alt="users icon" class="left-menu-icon">
           </div>
-          <div class="left-menu-item1-text"> FOLLOWING </div>
+          <div class="left-menu-item1-text"> 
+            <a :href = "followingRoute"> FOLLOWING </a>
+          </div>
         </div>
 
       </div>
@@ -60,7 +68,14 @@
 </template>
 <script>
   export default {
-    props: ['dashboardRoute', 'viewProfileRoute'],
+    props: [
+      'dashboardRoute', 
+      'viewProfileRoute', 
+      'postsRoute', 
+      'draftsRoute',
+      'followersRoute',
+      'followingRoute'
+    ],
     methods: {
       showLeftMenuArea() {
         const leftMenuArea = document.getElementById('slide-bar-menu')

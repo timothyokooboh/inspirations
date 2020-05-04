@@ -32,6 +32,12 @@
       padding-left: 10px;
       outline: none;
     }
+    textarea {
+      width: 100%;
+      height: 200px;
+      padding-left: 10px;
+      outline: none;
+    }
     input[type="submit"] {
       width: 100%;
       height: 40px;
@@ -72,6 +78,8 @@
   <slide-menu
     dashboard-route="{{route('home')}}" 
     view-profile-route="{{route('profiles.show', ['id' => auth()->user()->profile->id])}}"
+    posts-route="{{route('posts.index')}}"
+    drafts-route="{{route('drafts.index')}}"
     >
   </slide-menu>
 
@@ -81,7 +89,9 @@
     <left-menu 
       dashboard-route="{{route('home')}}" 
       view-profile-route="{{route('profiles.show', ['id' => auth()->user()->profile->id])}}"
-        >
+      posts-route="{{route('posts.index')}}"
+      drafts-route="{{route('drafts.index')}}"
+    >
     </left-menu>
 
     <div class="post-container">
@@ -93,7 +103,7 @@
           <input type="text" id="title" class="input" name="title" >
         </div>
         <div>
-          <label for="cover-photo"> Cover Photo (optional) </label> <br>
+          <label for="cover-photo"> Cover Photo </label> <br>
           <input type="file" id="cover-photo" name="coverPhoto">
         </div>
         <div>

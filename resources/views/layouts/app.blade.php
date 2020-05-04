@@ -2,7 +2,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1 , minimum-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , minimum-scale=1.0">
+    <meta name="keywords" content="inspiration, motivation, stories, blog, website, webapp">
+    <meta name="description" content="Create, share and find inspirational stories and tips">
+    <meta name="author" content="Timothy Okooboh">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -181,10 +184,10 @@
                     
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link stories " href="{{ route('login') }}" > ALL STORIES </a>
+                            <a class="nav-link stories " href="{{ route('allstories') }}" > ALL STORIES </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link stories" href="{{ route('login') }}"> NEW STORIES </a>
+                            <a class="nav-link stories" href="{{ route('newstories') }}"> NEW STORIES </a>
                         </li>
                                    
                         @guest

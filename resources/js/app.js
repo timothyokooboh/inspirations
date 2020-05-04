@@ -19,10 +19,14 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('follow-button', require('./components/FollowButton.vue').default);
 Vue.component('left-menu', require('./components/LeftMenu.vue').default);
 Vue.component('slide-menu', require('./components/SlideMenu.vue').default);
 Vue.component('create-post', require('./components/CreatePost.vue').default);
+Vue.component('list-stories', require('./components/ListStories.vue').default);
+Vue.component('view-story', require('./components/ViewStory.vue').default);
+Vue.component('make-comment', require('./components/MakeComment.vue').default);
+Vue.component('likes-button', require('./components/LikesButton.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
