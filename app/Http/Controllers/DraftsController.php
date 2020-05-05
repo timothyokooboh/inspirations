@@ -16,7 +16,7 @@ class DraftsController extends Controller
     public function index()
     {
         //contains all the drafts by a particular user
-        $posts = auth()->user()->post->where('mode', 'Private');
+        $posts = Post::where( ['user_id' => auth()->user()->id, 'mode' => 'Private'] )->latest()->get();
         
         return view('drafts.index')->with(['posts' => $posts ]);
     }

@@ -4,7 +4,11 @@
     <div class="hide" v-if="isCoverphoto">
       <img :src = "postImage" alt="cover photo for the post" class="cover-photo"> 
     </div>
-    <div class="hide" v-html="postContent">   </div>
+    <div class="hide" v-html="postContent">  </div>
+    <div class = "hide" > 
+      <img src="/images/heart.svg" class="heart-icon" > 
+      {{postLikesCount}} 
+    </div>
     <div class="hide"> Posted on {{postDate}} </div>
     <div class="post-card-actions">
       <div>
@@ -26,7 +30,8 @@ export default {
     'viewPost', 
     'editPost', 
     'authUser',
-    'isCoverphoto'
+    'isCoverphoto',
+    'postLikesCount'
   ],
 
 }
@@ -40,7 +45,7 @@ export default {
 }
 .post-card {
   width: 250px;
-  height: 300px;
+  height: 350px;
   margin: 10px;
   background-color: #fff;
   color: #501A3E;
@@ -50,7 +55,7 @@ export default {
   box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
 }
 .post-card div {
-  padding: 10px;
+  padding: 5px;
 }
 .post-card-actions {
   display: none;
@@ -78,6 +83,12 @@ export default {
 }
 .story:after {
   content: ''
+}
+.heart-icon {
+  object-fit: cover;
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
 }
 @keyframes slideIn {
   from {

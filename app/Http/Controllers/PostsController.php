@@ -25,8 +25,9 @@ class PostsController extends Controller
 
     public function index()
     {
-        //contains all the posts by a particular user
-        $posts = auth()->user()->post->where('mode', 'Public');
+        //contains all the published posts (public mode) by a particular user
+        
+        $posts = Post::where([ 'user_id' => auth()->user()->id, 'mode' => 'Public' ])->latest()->get();
         
         return view('posts.index')->with(['posts' => $posts ]);
     }
@@ -51,7 +52,7 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => ['required', 'string', 'max:255'],
+            'title' => ['required', 'string', 'max:100' ],
             'coverPhoto' => ['image', 'nullable', 'max:2999'],
             'story' => ['required'],
             'mode' => ['required'],
@@ -138,7 +139,7 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => ['required', 'string', 'max:255'],
+            'title' => ['required', 'string', 'max:100' ],
             'coverPhoto' => ['image', 'max:2999', 'nullable'],
             'story' => ['required'],
             'tags' => ['nullable', 'string', 'max:255'],

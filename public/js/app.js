@@ -2125,8 +2125,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['postTitle', 'postImage', 'postContent', 'postDate', 'viewPost', 'editPost', 'authUser', 'isCoverphoto']
+  props: ['postTitle', 'postImage', 'postContent', 'postDate', 'viewPost', 'editPost', 'authUser', 'isCoverphoto', 'postLikesCount']
 });
 
 /***/ }),
@@ -6915,7 +6919,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".post-card-container[data-v-0122023a] {\n  margin-top: 20px;\n  display: flex;\n  flex-wrap: wrap;\n  letter-spacing: 1.08px;\n}\n.post-card[data-v-0122023a] {\n  width: 250px;\n  height: 300px;\n  margin: 10px;\n  background-color: #fff;\n  color: #501A3E;\n  border-radius: 10px;\n  text-align: center;\n  padding: 5px;\n  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);\n}\n.post-card div[data-v-0122023a] {\n  padding: 10px;\n}\n.post-card-actions[data-v-0122023a] {\n  display: none;\n}\n.post-card-actions div a[data-v-0122023a] {\n  text-decoration: none;\n  color: #501A3E;\n}\n.post-card-actions div a[data-v-0122023a]:hover {\n  text-decoration: none;\n}\n.post-card[data-v-0122023a]:hover {\n  background: #FAF0F8;\n}\n.post-card:hover .hide[data-v-0122023a] {\n  display: none;\n}\n.post-card:hover .post-card-actions[data-v-0122023a] {\n  display: flex;\n  height: 100%;\n  align-items: center;\n  justify-content: space-around;\n  -webkit-animation: slideIn-data-v-0122023a 0.5s ease-in-out forwards;\n          animation: slideIn-data-v-0122023a 0.5s ease-in-out forwards;\n}\n.story[data-v-0122023a]:after {\n  content: \"\";\n}\n@-webkit-keyframes slideIn-data-v-0122023a {\nfrom {\n    background-color: \"\";\n    opacity: 0;\n    transform: translateY(100px);\n}\nto {\n    background: #FAF0F8;\n    opacity: 1;\n    transform: translateY(0px);\n}\n}\n@keyframes slideIn-data-v-0122023a {\nfrom {\n    background-color: \"\";\n    opacity: 0;\n    transform: translateY(100px);\n}\nto {\n    background: #FAF0F8;\n    opacity: 1;\n    transform: translateY(0px);\n}\n}\n.post-title[data-v-0122023a] {\n  text-transform: uppercase;\n}\n.cover-photo[data-v-0122023a] {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n}", ""]);
+exports.push([module.i, ".post-card-container[data-v-0122023a] {\n  margin-top: 20px;\n  display: flex;\n  flex-wrap: wrap;\n  letter-spacing: 1.08px;\n}\n.post-card[data-v-0122023a] {\n  width: 250px;\n  height: 350px;\n  margin: 10px;\n  background-color: #fff;\n  color: #501A3E;\n  border-radius: 10px;\n  text-align: center;\n  padding: 5px;\n  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);\n}\n.post-card div[data-v-0122023a] {\n  padding: 5px;\n}\n.post-card-actions[data-v-0122023a] {\n  display: none;\n}\n.post-card-actions div a[data-v-0122023a] {\n  text-decoration: none;\n  color: #501A3E;\n}\n.post-card-actions div a[data-v-0122023a]:hover {\n  text-decoration: none;\n}\n.post-card[data-v-0122023a]:hover {\n  background: #FAF0F8;\n}\n.post-card:hover .hide[data-v-0122023a] {\n  display: none;\n}\n.post-card:hover .post-card-actions[data-v-0122023a] {\n  display: flex;\n  height: 100%;\n  align-items: center;\n  justify-content: space-around;\n  -webkit-animation: slideIn-data-v-0122023a 0.5s ease-in-out forwards;\n          animation: slideIn-data-v-0122023a 0.5s ease-in-out forwards;\n}\n.story[data-v-0122023a]:after {\n  content: \"\";\n}\n.heart-icon[data-v-0122023a] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 13px;\n  height: 13px;\n  margin-right: 5px;\n}\n@-webkit-keyframes slideIn-data-v-0122023a {\nfrom {\n    background-color: \"\";\n    opacity: 0;\n    transform: translateY(100px);\n}\nto {\n    background: #FAF0F8;\n    opacity: 1;\n    transform: translateY(0px);\n}\n}\n@keyframes slideIn-data-v-0122023a {\nfrom {\n    background-color: \"\";\n    opacity: 0;\n    transform: translateY(100px);\n}\nto {\n    background: #FAF0F8;\n    opacity: 1;\n    transform: translateY(0px);\n}\n}\n.post-title[data-v-0122023a] {\n  text-transform: uppercase;\n}\n.cover-photo[data-v-0122023a] {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n}", ""]);
 
 // exports
 
@@ -38960,6 +38964,14 @@ var render = function() {
       staticClass: "hide",
       domProps: { innerHTML: _vm._s(_vm.postContent) }
     }),
+    _vm._v(" "),
+    _c("div", { staticClass: "hide" }, [
+      _c("img", {
+        staticClass: "heart-icon",
+        attrs: { src: "/images/heart.svg" }
+      }),
+      _vm._v(" \n    " + _vm._s(_vm.postLikesCount) + " \n  ")
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "hide" }, [
       _vm._v(" Posted on " + _vm._s(_vm.postDate) + " ")

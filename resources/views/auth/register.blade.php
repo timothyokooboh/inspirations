@@ -6,10 +6,10 @@
         }
         .form-container {
             max-width: 500px;
-            margin: 100px auto;
+            margin: 20px auto;
             border-radius: 5px;
             background-color: #fff;
-            box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+            border: 1px solid #ccc;
             padding: 40px 0px;
         }
         #register-headline {
@@ -17,6 +17,9 @@
             margin: auto;
             padding: 20px 0px;
             letter-spacing: 1.08px;
+            text-align: center;
+            line-height: 50px;
+            color: #501A3E;
         }
         .label {
             width: 90%;
@@ -93,23 +96,19 @@
         @media (max-width: 600px) {
             .form-container {
                 max-width: 400px;
-                margin: 100px auto;
-                border: 1px solid #ccc;
             }
         }
         @media (max-width: 400px) {
             .form-container {
                 max-width: 300px;
-                margin: 100px auto;
-                border: 1px solid #ccc;
             }
         }
     </style>
 
 @section('content')
-
+    
+    <h1 id="register-headline"> Welcome to Inspirations. <br> Sign up to get started. </h1>
     <div class="form-container">
-        <h1 id="register-headline"> SIGN UP </h1>
         <form method="POST" action="{{ route('register') }}" >
             @csrf
 

@@ -52,11 +52,18 @@
     .form-flex-container button {
       background-color: #227DC7;
       border-radius: 4px;
+      border: none;
+      outline: none;
+    }
+    .form-flex-container button a {
+      text-decoration: none;
     }
     .form-flex-container input[type="submit"] {
       background-color: #C51F1A;
       color: #fff;
       border-radius: 4px;
+      border: none;
+      outline: none;
     }
     @media (max-width: 754px) {
       .main-grid-container {

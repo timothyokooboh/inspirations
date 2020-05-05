@@ -71,12 +71,13 @@
             <list-stories 
               post-title="{{$post->title}}"
               post-image="/storage/coverPhotos/{{$post->coverPhoto}}"
-              post-content="{{substr($post->story, 0, 50) }} ... " 
+              post-content="{{substr($post->story, 0, 40) }} ... " 
               post-date="{{date('F j Y'), strtotime($post->created_at)}}"
               view-post="{{route('posts.show', ['id'=>$post->id, 'title' => $post->title ])}}"
               edit-post="{{route('posts.edit', ['id'=>$post->id])}}"
               auth-user="{{$post->user_id === auth()->user()->id}}"
               is-coverphoto = "{{$post->coverPhoto !== NULL}}"
+              post-likes-count = "{{$post->likes->count()}}"
               >
             </list-stories>
             
@@ -94,12 +95,13 @@
     <div class=" guest-user post-card-container">
       @foreach($posts as $post)
         <list-stories 
-          post-title="{{$post->title}}"
+          post-title = "{{$post->title}}"
           post-image="/storage/coverPhotos/{{$post->coverPhoto}}"
-          post-content="{{ substr($post->story, 0, 50) }} ..." 
+          post-content="{{ substr($post->story, 0, 40) }} ..." 
           post-date="{{date('F j Y'), strtotime($post->created_at)}}"
           view-post="{{route('posts.show', [ 'id'=>$post->id, 'title' => $post->title ])}}"
           is-coverphoto = "{{$post->coverPhoto !== NULL}}"
+          post-likes-count = "{{$post->likes->count()}}"
         >
         </list-stories>
       @endforeach

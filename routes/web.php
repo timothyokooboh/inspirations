@@ -36,7 +36,6 @@ Route::delete('/posts/{id}', 'PostsController@destroy')->name('posts.delete')->m
 Route::get('/drafts', 'DraftsController@index')->name('drafts.index')->middleware('auth');
 
 Route::get('/allstories', 'StoriesController@allStories')->name('allstories');
-Route::get('/newstories', 'StoriesController@newStories')->name('newstories');
 
 Route::resource('comments', 'CommentsController');
 Route::post('comments/store/{id}', 'CommentsController@store');

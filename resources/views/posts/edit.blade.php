@@ -127,14 +127,14 @@
 
         <div>
           <p> Mode </p>
-          <input type="radio" id="public" value="Public" name="mode">
-          <label for="public"> Public </label> <br>
-          <input type="radio" id="private" value="Private" name="mode">
-          <label for="private"> Private (Post will be saved as draft) </label>
+          <input type = "radio" id="public" value="Public" name="mode">
+          <label for = "public"> Public </label> <br>
+          <input type = "radio" id="private" value="Private" name="mode">
+          <label for = "private"> Private (Post will be saved as draft) </label>
         </div>
 
         <div>
-          <input type="submit" value="PUBLISH">
+          <input type = "submit" value = "UPDATE" >
         </div>
         
       </form>

@@ -207,6 +207,8 @@
             &copy; Inspirations 2020. All Rights Reserved. 
         </div>
     </div>
+
+    
                     
   @endsection
 

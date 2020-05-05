@@ -79,7 +79,7 @@
 
         @media(max-width: 270px) {
             .counts-card {
-                width: 20px;
+                width: 200px;
             }
             .counts-card-score { 
                 font-size: 30px

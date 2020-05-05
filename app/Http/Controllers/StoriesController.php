@@ -15,12 +15,4 @@ class StoriesController extends Controller
         return view('allstories')->with(['posts' => $posts ]);
     }
 
-    public function newStories() 
-    {
-
-    /** Displays the most recent 10 posts */
-        $posts = Post::where('mode', 'public')->latest()->take(10)->get();
-        
-        return view('newstories')->with(['posts' => $posts ]);
-    }
 }

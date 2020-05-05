@@ -39,7 +39,9 @@
       background-color: #fff;
       border-radius: 10px;
       text-align: center;
-      padding: 20px;
+      display: grid;
+      justify-content: center;
+      align-content: center;
       box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
       color: #501A3E;
       letter-spacing: 1.08px;
