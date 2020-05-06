@@ -21,7 +21,6 @@ window.Vue = require('vue');
 
 Vue.component('follow-button', require('./components/FollowButton.vue').default);
 Vue.component('left-menu', require('./components/LeftMenu.vue').default);
-Vue.component('slide-menu', require('./components/SlideMenu.vue').default);
 Vue.component('create-post', require('./components/CreatePost.vue').default);
 Vue.component('list-stories', require('./components/ListStories.vue').default);
 Vue.component('view-story', require('./components/ViewStory.vue').default);

@@ -49,18 +49,18 @@
             font-weight: bold;
         }
         input:focus {
-            outline: 3px solid #FAF0F8;
+            outline: 3px solid #0069D9;
             border-color: transparent
         }
         input[type=submit] {
-            color: #501A3E;
-            background-color: #FAF0F8;
+            background-color: #0069D9;
+            color: #fff;
             letter-spacing: 1.08px; 
             border: none;
             font-size: 18px;p
         }
         input[type=submit]:focus {
-            outline: 2px dotted #501A3E;
+            outline: 2px dotted #0069D9;
             outline-offset: 4px;
         }
         input[type=submit]::-moz-focus-inner {

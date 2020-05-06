@@ -37,6 +37,8 @@ Route::get('/drafts', 'DraftsController@index')->name('drafts.index')->middlewar
 
 Route::get('/allstories', 'StoriesController@allStories')->name('allstories');
 
+Route::post('/allstories', 'StoriesController@allStories');
+
 Route::resource('comments', 'CommentsController');
 Route::post('comments/store/{id}', 'CommentsController@store');
 
@@ -52,4 +54,6 @@ Route::get('/privacypolicy', 'PagesController@privacypolicy')->name('pages.priva
 Route::resource('contacts', 'ContactsController');
 Route::get('/contacts/create', 'ContactsController@create')->name('contacts.create');
 Route::post('/contacts', 'ContactsController@store')->name('contacts.store');
+
+
 

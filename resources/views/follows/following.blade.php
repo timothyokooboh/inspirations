@@ -98,15 +98,6 @@
 @endsection
 
 @section('content')
-  <slide-menu
-    dashboard-route="{{route('home')}}" 
-    view-profile-route="{{route('profiles.show', ['id' => auth()->user()->profile->id])}}"
-    posts-route="{{route('posts.index')}}"
-    drafts-route="{{route('drafts.index')}}"
-    followers-route = "{{route('follows.followers')}}"
-    following-route = "{{route('follows.following')}}"
-  >
-  </slide-menu>
 
   <div class="main-grid-container">
     <left-menu 

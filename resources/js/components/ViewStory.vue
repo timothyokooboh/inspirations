@@ -1,19 +1,30 @@
 <template>
   <div> 
+
     <div class="cover-photo-container" v-if="isCoverphoto">
       <img :src="coverPhoto" alt="cover photo" class="cover-image">
     </div>
-    <div class="post-title"> <h1> {{postTitle}} </h1> </div>
+
+    <div class="post-title"> 
+      <h1> {{postTitle}} </h1> 
+    </div>
+
     <div> Tags: {{postTags}} </div>
+
     <div>
       <small> {{postDate}} </small>
     </div>
+
     <div class="author">
-      <div v-if = "isAuthorPhoto" > 
-        <a :href = "viewProfile"> <img :src = "photoAuthor" alt="profile picture of author"> </a> 
+      <div v-if = "authorPhotoExists" > 
+        <a :href = "viewProfile"> 
+          <img :src = "photoAuthor" alt="profile picture of author"> 
+        </a> 
       </div>
       <div v-else>
-        <a :href = "viewProfile"> <img src="/images/profilePicture.svg" alt="profile picture of author" > </a>
+        <a :href = "viewProfile"> 
+          <img src="/images/profilePicture.svg" alt="profile picture of author" > 
+        </a>
       </div>
       <div> 
         <div>
@@ -21,13 +32,14 @@
         </div>
         <div v-if ="!isAuthor">
           <follow-button
-             :user-id = "userId" 
+            :user-id = "userId" 
             :follows = 'follows' 
           >
           </follow-button>
         </div>
       </div>
     </div>
+    
     <div v-html="postContent"> </div> 
 
     
@@ -36,11 +48,10 @@
 </template>
 <script>
 import FollowButton from './FollowButton'
-//import LikesButton from './LikesButton'
+
 export default {
   components: {
     followButton: FollowButton,
-    //likesButton: LikesButton
 
   },
   props: [
@@ -52,7 +63,7 @@ export default {
     'postAuthor', 
     'postContent',  
     'isCoverphoto', 
-    'isAuthorPhoto', 
+    'authorPhotoExists', 
     'viewProfile',
     'userId',
     'isAuthor',

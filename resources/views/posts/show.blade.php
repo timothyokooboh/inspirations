@@ -86,16 +86,6 @@
 @section('content')
   
   @auth
-
-    <slide-menu
-      dashboard-route="{{route('home')}}" 
-      view-profile-route="{{route('profiles.show', ['id' => auth()->user()->profile->id])}}"
-      posts-route="{{route('posts.index')}}"
-      drafts-route="{{route('drafts.index')}}"
-      followers-route = "{{route('follows.followers')}}"
-      following-route = "{{route('follows.following')}}"
-      >
-    </slide-menu>
   
     <div class="main-grid-container">
       <left-menu 
@@ -120,7 +110,7 @@
             view-profile = "{{route('profiles.show', ['id' => $post->user->profile->id])}}"
             post-content = "{{$post->story}}"
             is-coverphoto = "{{$post->coverPhoto !== NULL}}"
-            is-author-photo = "{{$post->user->profile->profilePicture !== NULL}}"
+            author-photo-exists = "{{$post->user->profile->profilePicture !== NULL }}" 
             is-author = "{{$post->user_id === auth()->user()->id}}"
             user-id = "{{$post->user_id}}"
             follows = {{$follows}}
@@ -203,7 +193,7 @@
   @endauth
 
   @guest
-    <div class=" guest-post-container">
+    <div class="guest-post-container" >
       <view-story
         cover-photo = "/storage/coverPhotos/{{$post->coverPhoto}}"
         post-title = "{{ $post->title }}"
@@ -213,20 +203,17 @@
         post-content = "{{ $post->story }}"
         is-coverphoto = "{{$post->coverPhoto !== NULL}}"
         photo-author = "/storage/profilePictures/{{$post->user->profile->profilePicture}}"
-        is-author-photo = "{{$post->user->profile->profilePicture !== NULL}}"
+        author-photo-exists = "{{$post->user->profile->profilePicture !== NULL }}" 
         view-profile = "{{route('profiles.show', [ 'id' => $post->user->profile->id ])}}"
-        
       >
       </view-story>
 
-      <div>
-        <likes-button
-          post-id = "{{$post->id}}"
-            likes = "{{$likes}}"
-            post-count = "{{$post->likes->count()}}"
-        >
+      <likes-button
+        post-id = "{{$post->id}}"
+        likes = "{{$likes}}"
+        post-count = "{{$post->likes->count()}}"
+      >
       </likes-button>
-      </div>
       
       <div>
         <form action="/comments/store/{{$post->id}}" method="POST">

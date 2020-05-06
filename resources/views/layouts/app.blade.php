@@ -142,6 +142,9 @@
             font-size: 14px;
             text-align: right;
         }
+        .sm-view {
+            display: none;
+        }
         .auth-menu-links:hover {
             text-decoration: none;
             color: #000;
@@ -187,6 +190,12 @@
             .auth-menu-items {
                 margin-top: 10px;
             }
+            
+        }
+        @media (max-width: 754px) {
+            .sm-view {
+                display: block;
+            }
         }
     </style>
    
@@ -214,7 +223,9 @@
                     
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link stories " href="{{ route('allstories') }}" > ALL STORIES </a>
+                            <a class="nav-link stories " href="{{ route('allstories') }}" > 
+                                ALL STORIES 
+                            </a>
                         </li>
                                    
                         @guest
@@ -231,6 +242,36 @@
                             
                             @else
                             <li>
+                                <li class="nav-item">
+                                    <a class = "nav-link stories sm-view" href="{{ route('home') }}" > 
+                                        DASHBOARD
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class = "nav-link stories sm-view" href= "{{route('profiles.show', ['id' => auth()->user()->profile->id])}}" > 
+                                        VIEW PROFILE
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class = "nav-link stories sm-view" href= "{{route('posts.index')}}" > 
+                                        POSTS
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class = "nav-link stories sm-view" href= "{{route('drafts.index')}}" > 
+                                        DRAFTS
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class = "nav-link stories sm-view" href= "{{route('follows.followers')}}" > 
+                                        FOLLOWERS
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class = "nav-link stories sm-view" href= "{{route('follows.following')}}" > 
+                                        FOLLOWING
+                                    </a>
+                                </li>
                                 <div class="auth-menu-items">
                                     <div>
                                         <div class="username">
@@ -259,6 +300,7 @@
                                             <img src="/images/profilePicture.svg" alt="profile picture" class="profile-picture">
                                         @endif
                                     </div>
+                                    
                                 </div>
                             </li> 
                             @endguest

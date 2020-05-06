@@ -52,11 +52,11 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => ['required', 'string', 'max:100' ],
+            'title' => ['required', 'string', 'max:150' ],
             'coverPhoto' => ['image', 'nullable', 'max:2999'],
             'story' => ['required'],
             'mode' => ['required'],
-            'tags' => ['nullable', 'string', 'max:255']
+            'tags' => ['nullable', 'string', 'max:150']
         ]);
 
         if ($request->hasFile('coverPhoto')) {
@@ -139,10 +139,10 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => ['required', 'string', 'max:100' ],
+            'title' => ['required', 'string', 'max:150' ],
             'coverPhoto' => ['image', 'max:2999', 'nullable'],
             'story' => ['required'],
-            'tags' => ['nullable', 'string', 'max:255'],
+            'tags' => ['nullable', 'string', 'max:150'],
             'mode' => ['required']
         ]);
 

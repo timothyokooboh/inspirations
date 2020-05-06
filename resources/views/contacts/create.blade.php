@@ -45,10 +45,10 @@
       height: 300px;
     }
     input[type=submit] {
-      color: #501A3E;
+      background-color: #0069D9;
+      color: #fff;
       font-weight: bold;
       font-size: 18px;
-      background-color: #FAF0F8;
       letter-spacing: 1.08px; 
       border: none; 
       margin-top: 20px;

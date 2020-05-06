@@ -75,6 +75,8 @@
 <style scoped>
   .left-menu-area {
     height: 100vh;
+    width: 300px;
+    margin-right: 50px;
     position: sticky;
     position: -webkit-sticky;
     top: 0;

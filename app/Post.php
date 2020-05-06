@@ -2,10 +2,16 @@
 
 namespace App;
 
+use Laravel\Scout\Searchable;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    use Searchable;
+
+    protected $primaryKey = 'id';
+
     protected $guarded = [];
 
     public function user()
@@ -21,5 +27,17 @@ class Post extends Model
     public function likes()
     {
         return $this->belongsToMany(User::class);
+    }
+
+    // public function toSearchableArray()
+    // {
+    //     $array = $this->toArray();
+
+    //     return array('id' => $array['id']);
+    // }
+
+    public function searchableAs()
+    {
+        return 'post_index';
     }
 }
