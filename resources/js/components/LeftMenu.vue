@@ -14,7 +14,7 @@
 
         <div class="left-menu-item1">
           <div> 
-            <img src="/images/profile.png" alt="" class="left-menu-icon">
+            <img src="/images/following.svg" alt="" class="left-menu-icon" style="border:none">
           </div>
           <div class="left-menu-item1-text"> 
             <a :href = "viewProfileRoute"> VIEW PROFILE </a>
@@ -80,7 +80,7 @@
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    background-color: #501A3E
+    background-color: #2C3135;
   }
   .left-menu-item1-container {
     display: grid;

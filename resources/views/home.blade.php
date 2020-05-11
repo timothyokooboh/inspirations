@@ -19,7 +19,7 @@
         .counts-card-container {
             display: flex;
             flex-wrap: wrap;
-            margin: 20px 0px;
+            padding: 50px 0px;
         }
         .counts-card {
             width: 300px;
@@ -92,12 +92,12 @@
 
     <div class="main-grid-container">
         <left-menu 
-        dashboard-route="{{route('home')}}" 
-        view-profile-route="{{route('profiles.show', ['id' => auth()->user()->profile->id])}}"
-        posts-route="{{route('posts.index')}}"
-        drafts-route="{{route('drafts.index')}}"
-        followers-route = "{{route('follows.followers')}}"
-        following-route = "{{route('follows.following')}}"
+            dashboard-route="{{route('home')}}" 
+            view-profile-route="{{route('profiles.show', ['id' => Auth::user()->profile->id])}}"
+            posts-route="{{route('posts.index')}}"
+            drafts-route="{{route('drafts.index')}}"
+            followers-route = "{{route('follows.followers')}}"
+            following-route = "{{route('follows.following')}}"
         >
         </left-menu>
 
@@ -106,6 +106,7 @@
                 <h3 class="counts-card-heading"> POSTS </h3>
                 <div class="counts-card-score"> {{$postCount}} </div>
             </div>
+            
             <div class="counts-card">
                 <h3 class="counts-card-heading"> DRAFTS </h3>
                 <h1 class="counts-card-score"> {{$draftCount}} </h1>

@@ -16,7 +16,10 @@
     .main-grid-container {
       display: flex;
       margin-right: 20px;
-      margin-left: 20px;
+    }
+    .post-wrapper {
+      width: 70%;
+      margin: auto;
     }
     .search-post-container {
       margin-top: 20px;
@@ -30,6 +33,7 @@
       height: 40px;
       border-radius: 20px;
       outline: none;
+      
     }
     .search-post-container input[type = "submit"] {
       border-radius: 20px;
@@ -40,11 +44,7 @@
       background-color: #0069D9;
       color: #fff;
       outline: none;
-    }
-    .guest-post-view {
-      width: 90%;
-      margin: 100px auto;
-      
+      border: none;
     }
     .paginate-container {
       display: flex;
@@ -56,9 +56,9 @@
         width: 90%;
         margin:auto;
       }
-      .search-post-container {
+      .post-wrapper {
         width: 90%;
-        margin: 20px auto;
+        margin: auto;
       }
     }
     @media (max-width: 318px) {
@@ -84,7 +84,7 @@
       </left-menu>
     @endauth
 
-    <div>
+    <div class="post-wrapper">
       <div >
         <div>
           <form action="/allstories" method="post">

@@ -4,31 +4,48 @@
         main {
             margin-top: 85px;
         }
+        body {
+            background: url('/images/water-compressor.jpg');
+            object-fit: cover;
+            background-size:cover;
+            width: 100%;
+            height: 100vh;
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+           
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        .content-wrapper {
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 150px 0px;
+        }
         .form-container {
-            max-width: 500px;
-            margin: 20px auto;
+            max-width: 400px;
             border-radius: 5px;
-            background-color: #fff;
-            border: 1px solid #ccc;
+            background-color: #2C3135;
             padding: 40px 0px;
+            color: #fff;
+            padding-bottom: 20px;
         }
         #register-headline {
-            width: 90%;
+            width: 80%;
             margin: auto;
-            padding: 20px 0px;
-            letter-spacing: 1.08px;
             text-align: center;
-            line-height: 50px;
-            color: #501A3E;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            letter-spacing: 1.08px;
         }
         .label {
-            width: 90%;
+            width: 80%;
             margin: auto;
-            color: #501A3E;
-            letter-spacing: 1.08px;
         }
         .input-container {
-            width: 90%;
+            width: 80%;
             display: flex;
             align-items: baseline;
             margin: 15px auto;
@@ -57,7 +74,8 @@
             color: #fff;
             letter-spacing: 1.08px; 
             border: none;
-            font-size: 18px;p
+            font-size: 18px;
+            margin: 10px 0px;
         }
         input[type=submit]:focus {
             outline: 2px dotted #0069D9;
@@ -73,15 +91,16 @@
             display: flex;
             align-items: baseline;
             justify-content: space-between;
-            width: 90%;
+            width: 80%;
             margin: auto;
+            padding: 20px 0px;
         }
         .flex-container a {
-            color: #501A3E;
+            color: #fff;
         }
 
         .flex-container a:hover {
-            color: #501A3E;
+            color: #fff;
         }
         input[type="checkbox"] {
             width: 15px;
@@ -89,135 +108,138 @@
             cursor: pointer;
         }
         .form-check {
-            width: 90%;
+            width: 80%;
             margin: auto;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 754px) {
             .form-container {
-                max-width: 400px;
+                max-width: 350px;
             }
         }
+
         @media (max-width: 400px) {
             .form-container {
-                max-width: 300px;
+                max-width: 320px;
             }
         }
     </style>
 
 @section('content')
     
-    <h1 id="register-headline"> Welcome to Inspirations. <br> Sign up to get started. </h1>
-    <div class="form-container">
-        <form method="POST" action="{{ route('register') }}" >
-            @csrf
+    <div class="content-wrapper" >
+        <div class="form-container">
+            <h1 id="register-headline"> Welcomes to Inspirations. <br> Sign up to get started. </h1>
+            <form method="POST" action="{{ route('register') }}" >
+                @csrf
 
-            <div class="label">
-                <label for="username"> Username </label>
-            </div>
-
-            <div class="input-container">
-                <div class="input">
-                    <input 
-                        type="text" 
-                        id="username" 
-                        class="@error('username') is-invalid @enderror" 
-                        name="username" 
-                        value="{{ old('username') }}" 
-                        required 
-                        autocomplete="username" 
-                        autofocus
-                    >
-                    @error('username')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                <div class="label">
+                    <label for="username"> Username </label>
                 </div>
-                <div>
-                    <img src="/images/user.png" alt="" class="form-icon">
-                </div>
-            </div>
 
-            <div class="label">
-                <label for="email"> Email </label>
-            </div>
-
-            <div class="input-container">
-                <div class="input">
-                    <input 
-                        type="email" 
-                        id="email"
-                        class="@error('email') is-invalid @enderror" 
-                        name="email" 
-                        value="{{ old('email') }}" 
-                        required 
-                        autocomplete="email" 
-                    >
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                <div class="input-container">
+                    <div class="input">
+                        <input 
+                            type="text" 
+                            id="username" 
+                            class="@error('username') is-invalid @enderror" 
+                            name="username" 
+                            value="{{ old('username') }}" 
+                            required 
+                            autocomplete="username" 
+                            autofocus
+                        >
+                        @error('username')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div>
+                        <img src="/images/user-compressor.png" alt="user icon" class="form-icon">
+                    </div>
                 </div>
-                <div>
-                    <img src="/images/email.png" alt="" class="form-icon">
-                </div>
-            </div>
 
-            <div class="label">
-                <label for="password"> Password </label>
-            </div>
-
-            <div class="input-container">
-                <div class="input">
-                    <input 
-                        type="password" 
-                        id="password"
-                        class="@error('password') is-invalid @enderror" 
-                        name="password" 
-                        value="{{ old('password') }}" 
-                        required 
-                        autocomplete="current-password" 
-                    >
-                    @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                <div class="label">
+                    <label for="email"> Email </label>
                 </div>
-                <div>
-                    <img src="/images/key.png" alt="" class="form-icon">
-                </div>
-            </div>
 
-            <div class="label">
-                <label for="password-confirm"> Confirm Password </label>
-            </div>
-
-            <div class="input-container">
-                <div class="input">
-                    <input 
-                        type="password" 
-                        class="@error('password') is-invalid @enderror" 
-                        id="password-confirm"
-                        name="password_confirmation" 
-                        required 
-                        autocomplete="new-password"
-                    >
+                <div class="input-container">
+                    <div class="input">
+                        <input 
+                            type="email" 
+                            id="email"
+                            class="@error('email') is-invalid @enderror" 
+                            name="email" 
+                            value="{{ old('email') }}" 
+                            required 
+                            autocomplete="email" 
+                        >
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div>
+                        <img src="/images/email-compressor.png" alt="" class="form-icon">
+                    </div>
                 </div>
-                <div>
-                    <img src="/images/key.png" alt="" class="form-icon">
-                </div>
-            </div>  
 
-            <div class="input-container">
-                <div class="input">
-                    <input type="submit" value="REGISTER">
+                <div class="label">
+                    <label for="password"> Password </label>
                 </div>
-            </div>
 
-        </form>
+                <div class="input-container">
+                    <div class="input">
+                        <input 
+                            type="password" 
+                            id="password"
+                            class="@error('password') is-invalid @enderror" 
+                            name="password" 
+                            value="{{ old('password') }}" 
+                            required 
+                            autocomplete="current-password" 
+                        >
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div>
+                        <img src="/images/key-compressor.png" alt="" class="form-icon">
+                    </div>
+                </div>
+
+                <div class="label">
+                    <label for="password-confirm"> Confirm Password </label>
+                </div>
+
+                <div class="input-container">
+                    <div class="input">
+                        <input 
+                            type="password" 
+                            class="@error('password') is-invalid @enderror" 
+                            id="password-confirm"
+                            name="password_confirmation" 
+                            required 
+                            autocomplete="new-password"
+                        >
+                    </div>
+                    <div>
+                        <img src="/images/key-compressor.png" alt="" class="form-icon">
+                    </div>
+                </div>  
+
+                <div class="input-container">
+                    <div class="input">
+                        <input type="submit" value="REGISTER">
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
 
 @endsection

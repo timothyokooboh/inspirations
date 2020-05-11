@@ -20,7 +20,7 @@ class PostsController extends Controller
 
     public function __construct()
     {
-       $this->middleware('auth')->except('show');
+       $this->middleware( 'auth', ['except' => ['show']] );
     }
 
     public function index()
@@ -103,8 +103,6 @@ class PostsController extends Controller
         $postID = $post->id;
         
         $likes = (auth()->user()) ? auth()->user()->liking->contains($postID) : false;
-
-        //dd($likes);
       
         return view('posts.show')->with(['post' => $post, 'comments' => $comments, 'follows' => $follows, 'likes' => $likes ]);
     }
@@ -118,6 +116,14 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
+
+        /**
+         * Check if the authenticated user is the author of the post.
+         * 
+         * If he is not the author of the post, redirect to the dashoard.
+         * 
+         * If he is the author, permit access to the edit route.
+         */
 
         if ( $post->user_id !== auth()->user()->id ) {
             return redirect(route('home'))->with(['error' => 'Unauthorized access']);

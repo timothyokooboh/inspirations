@@ -78,9 +78,11 @@
   }
   input[type=submit] {
     color: #FAF0F8;
-    background-color: #501A3E;
+    background-color: #0069D9;
     letter-spacing: 1.08px; 
     margin-top: 20px;
+    border: none;
+    outline: none;
   }
   input[type=submit]:focus {
     outline: 2px dotted #501A3E;
@@ -163,7 +165,7 @@
 <div class="main-grid-container">
   <left-menu
     dashboard-route="{{route('home')}}" 
-    view-profile-route="{{route('profiles.show', ['id' => $profile->id])}}"
+    view-profile-route="{{route('profiles.show', ['id' => Auth::user()->profile->id])}}"
     posts-route="{{route('posts.index')}}"
     drafts-route="{{route('drafts.index')}}"
     followers-route = "{{route('follows.followers')}}"

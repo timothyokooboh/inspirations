@@ -1,5 +1,5 @@
 <template>
-  <div> 
+  <div class ="post-container"> 
 
     <div class="cover-photo-container" v-if="isCoverphoto">
       <img :src="coverPhoto" alt="cover photo" class="cover-image">
@@ -82,10 +82,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .post-container {
-      margin-right: 100px;
-      margin-top: 20px;
-    }
+  
     .post-container div {
       padding-bottom: 10px;
     }

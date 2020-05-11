@@ -14,7 +14,7 @@ export default {
    computed: {
        buttonText() {
         if(this.status) {
-            return 'FOLLOWING'
+            return 'UNFOLLOW'
         } else {
             return 'FOLLOW'
         }

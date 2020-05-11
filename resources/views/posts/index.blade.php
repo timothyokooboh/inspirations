@@ -50,6 +50,7 @@
 @section('content')
 
   <div class="main-grid-container">
+    
     <left-menu 
       dashboard-route="{{route('home')}}" 
       view-profile-route="{{route('profiles.show', ['id' => auth()->user()->profile->id])}}"
@@ -102,6 +103,7 @@
 @endsection
 
 @section('scripts')
+
   <script>
     function confirmDelete() {
       if ( confirm('Are you sure you want to delete this post?')) {

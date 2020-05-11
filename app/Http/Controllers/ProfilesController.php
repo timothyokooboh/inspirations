@@ -130,7 +130,7 @@ class ProfilesController extends Controller
             
           $profile->save();
  
-        return redirect(route('home'))->with('success', 'Profile updated successfully');
+        return redirect(route('profiles.edit', [ 'id' => $profile->id ]))->with('success', 'Profile updated successfully');
 
     }
 

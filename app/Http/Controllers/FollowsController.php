@@ -29,7 +29,6 @@ class FollowsController extends Controller
     public function following()
     {
         $followings = DB::table('profile_user')->where('user_id', auth()->user()->id)->get();
-        //dd($followings);
         
         return view('follows.following')->with(['followings' => $followings]);
     }

@@ -42,7 +42,9 @@
       width: 100%;
       height: 40px;
       color: #FAF0F8;
-      background-color: #501A3E;
+      background-color: #0069D9;
+      border: none;
+      outline: none;
     }
     input[type=submit]::-moz-focus-inner {
       border: 0;
@@ -101,7 +103,7 @@
 
         <div>
           <label for="cover-photo"> Cover Photo (optional) </label> <br>
-          <input type="file" id="cover-photo" name="coverPhoto" >
+          <input type="file" id="cover-photo" accept="image/*" name="coverPhoto" >
         </div>
 
         <div>

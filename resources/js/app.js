@@ -26,6 +26,7 @@ Vue.component('list-stories', require('./components/ListStories.vue').default);
 Vue.component('view-story', require('./components/ViewStory.vue').default);
 Vue.component('make-comment', require('./components/MakeComment.vue').default);
 Vue.component('likes-button', require('./components/LikesButton.vue').default);
+Vue.component('lazy-load', require('./components/LazyLoad.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

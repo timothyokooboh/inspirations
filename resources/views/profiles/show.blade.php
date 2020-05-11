@@ -125,7 +125,7 @@
   <div class="main-grid-container">
     <left-menu 
       dashboard-route="{{route('home')}}" 
-      view-profile-route="{{route('profiles.show', ['id' => auth()->user()->id])}}"
+      view-profile-route="{{route('profiles.show', ['id' => Auth::user()->id])}}"
       posts-route="{{route('posts.index')}}"
       drafts-route="{{route('drafts.index')}}"
       followers-route = "{{route('follows.followers')}}"
@@ -147,7 +147,7 @@
           {{$profile->firstName}} {{$profile->lastName}} <br>
           <img src="/images/location.svg" class="icon"> {{$profile->state}}, {{$profile->country}}
           <div class="call-to-action">
-            @if(auth()->user()->profile->id == $profile->id )
+            @if(Auth::user()->profile->id == $profile->id )
               <button class="edit-profile"> 
                 <a href="{{route('profiles.edit', ['id' => $profile->id])}}"> EDIT PROFILE </a>
               </button>

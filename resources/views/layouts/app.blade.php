@@ -14,7 +14,7 @@
 
     <!-- Scripts -->
     
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ mix('/js/app.js') }}" defer > </script>
 
 
     <!-- Fonts -->
@@ -54,6 +54,7 @@
 <!-- Tile for Win8 -->
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/images/icons/icon-512x512.png">
+
     @laravelPWA
 
     @yield('styles')
@@ -279,7 +280,7 @@
                                             </a>
                                         </div>
                                         <div class="auth-menu-links-container">
-                                            <a href="{{route('profiles.edit', ['id' => auth()->user()->profile->id])}}" class="auth-menu-links">
+                                            <a href="{{route('profiles.edit', ['id' => Auth::user()->profile->id])}}" class="auth-menu-links">
                                                 Edit profile
                                             </a> |
                                             <a href="{{ route('logout') }}"
@@ -330,6 +331,24 @@
             console.log('Laravel PWA: ServiceWorker registration failed: ', err);
         });
     }
+
+    const observees = document.querySelectorAll('.m');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log('visible')
+          entry.target.style.animation = `animate 2s ease-out forwards`
+        } else {
+          entry.target.style.animation = 'none'
+          console.log('invisible article')
+        }
+        console.log(entry)
+      })
+    })
+    observees.forEach((observee) => {
+      observer.observe(observee)
+    })
+        
 </script>
    
     @yield('scripts')

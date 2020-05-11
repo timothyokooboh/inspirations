@@ -42,7 +42,9 @@
       width: 100%;
       height: 40px;
       color: #FAF0F8;
-      background-color: #501A3E;
+      background-color: #0069D9;
+      border: none;
+      outline: none;
     }
     input[type=submit]::-moz-focus-inner {
       border: 0;
@@ -75,15 +77,6 @@
 
 @section('content')
 
-  <slide-menu
-    dashboard-route="{{route('home')}}" 
-    view-profile-route="{{route('profiles.show', ['id' => auth()->user()->profile->id])}}"
-    posts-route="{{route('posts.index')}}"
-    drafts-route="{{route('drafts.index')}}"
-    >
-  </slide-menu>
-
-
   <div class="main-grid-container">
 
     <left-menu 
@@ -95,7 +88,7 @@
     </left-menu>
 
     <div class="post-container">
-      <h2> Share Your Story or Inspirational Insights </h2>
+      <h2> Share a Story or Inspirational Insights </h2>
       <form action="/posts" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
@@ -104,7 +97,7 @@
         </div>
         <div>
           <label for="cover-photo"> Cover Photo </label> <br>
-          <input type="file" id="cover-photo" name="coverPhoto">
+          <input type="file" id="cover-photo" accept="image/*" name="coverPhoto">
         </div>
         <div>
           <label for="story"> Post Content </label> <br>

@@ -1,19 +1,19 @@
 <template>
-  <div class = "post-container" >
+  <div class = "post-container lazyload" >
     <div v-if = "isCoverPhoto">
       <a :href = "viewPost" > 
-        <img :src = "postCoverPhoto" alt = "cover photo of the post" class ="cover-image">
+        <img :src = "postCoverPhoto" loading = 'lazy' alt = "cover photo of the post" class ="cover-image">
       </a>
     </div>
     <div class="flex-me" >
       <div v-if = "authorPhotoExists" > 
         <a :href = "viewProfile" >
-          <img :src = "authorPhoto" alt = "profile picture of the author" class = "profile-pix" >
+          <img :src = "authorPhoto" loading = 'lazy' alt = "profile picture of the author" class = "profile-pix" >
         </a>
       </div>
       <div v-else>
         <a :href = "viewProfile" >
-          <img src="/images/profilePicture.svg" alt = "profile picture of the author" class="profile-pix">
+          <img src="/images/profilePicture.svg" loading = 'lazy' alt = "profile picture of the author" class="profile-pix">
         </a>
       </div>
 
@@ -24,7 +24,7 @@
           <p> By {{postAuthor}} </p>
           <p> {{postDate}} </p>
           <p> 
-          <img src = "/images/heart.svg" class = "heart-icon" > 
+          <img src = "/images/heart.svg" loading = 'lazy' alt="heart icon" class = "heart-icon" > 
           {{ postLikesCount }} 
         </p>
         </a>
@@ -50,6 +50,21 @@ export default {
     'postLikesCount',
     
   ],
+  mounted () {
+    const observees = document.querySelectorAll('.lazyload');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = `animate 1s ease-out forwards`
+        } else {
+          entry.target.style.animation = 'none'
+        }
+      })
+    })
+    observees.forEach((observee) => {
+      observer.observe(observee)
+    })
+  }
 
 }
 </script>
@@ -63,7 +78,6 @@ export default {
   }
   .post-container {
     margin-top: 20px;
-    margin-right: 10px;
     letter-spacing: 1.08px;
     color: #501A3E;
   }
@@ -92,13 +106,18 @@ export default {
     height: 50px;
     border-radius: 50%;
   }
-
-  @media (max-width: 754px) {
-    .post-container {
-      width: 90%;
-      margin: auto;
+  .lazyload {
+    opacity: 0;
+  }
+  @keyframes animate {
+    from {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
-
-
+  
 </style>
