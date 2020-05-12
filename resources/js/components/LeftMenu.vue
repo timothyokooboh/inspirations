@@ -5,7 +5,7 @@
 
         <div class="left-menu-item1">
           <div> 
-            <img src="/images/home.svg" alt="" class="left-menu-icon">
+            <img src="https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272317/samples/inspirations/home_hmxzoy.svg" alt="dashboard icon" class="left-menu-icon">
           </div>
           <div class="left-menu-item1-text"> 
             <a :href = "dashboardRoute" > DASHBOARD </a>
@@ -14,7 +14,7 @@
 
         <div class="left-menu-item1">
           <div> 
-            <img src="/images/following.svg" alt="" class="left-menu-icon" style="border:none">
+            <img src="https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589273052/samples/inspirations/following_guhswc.svg" alt="view profile icon" class="left-menu-icon" >
           </div>
           <div class="left-menu-item1-text"> 
             <a :href = "viewProfileRoute"> VIEW PROFILE </a>
@@ -23,7 +23,7 @@
 
         <div class="left-menu-item1">
           <div> 
-            <img src="/images/posts.png" alt="" class="left-menu-icon">
+            <img src="https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272373/samples/inspirations/posts_jbdfhv.png" alt="posts icon" class="left-menu-icon">
           </div>
           <div class="left-menu-item1-text"> 
             <a :href = "postsRoute"> POSTS </a>
@@ -32,7 +32,7 @@
 
         <div class="left-menu-item1">
           <div> 
-            <img src="/images/draft.png" alt="" class="left-menu-icon">
+            <img src="https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272391/samples/inspirations/draft_s5t5he.png" alt="drafts icon" class="left-menu-icon">
           </div>
           <div class="left-menu-item1-text"> 
             <a :href = "draftsRoute"> DRAFTS </a></div>
@@ -40,7 +40,7 @@
 
         <div class="left-menu-item1">
           <div> 
-            <img src="/images/followers.svg" alt="users icon" class="left-menu-icon">
+            <img src="https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589273033/samples/inspirations/followers_fxhhsb.svg" alt="followers icon" class="left-menu-icon">
           </div>
           <div class="left-menu-item1-text"> 
             <a :href="followersRoute"> FOLLOWERS </a>
@@ -49,7 +49,7 @@
 
         <div class="left-menu-item1">
           <div> 
-            <img src="/images/following.svg" alt="users icon" class="left-menu-icon">
+            <img src="https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589273052/samples/inspirations/following_guhswc.svg" alt="following icon" class="left-menu-icon">
           </div>
           <div class="left-menu-item1-text"> 
             <a :href = "followingRoute"> FOLLOWING </a>

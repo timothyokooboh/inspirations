@@ -38908,7 +38908,11 @@ var staticRenderFns = [
     return _c("div", [
       _c("img", {
         staticClass: "left-menu-icon",
-        attrs: { src: "/images/home.svg", alt: "" }
+        attrs: {
+          src:
+            "https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272317/samples/inspirations/home_hmxzoy.svg",
+          alt: "dashboard icon"
+        }
       })
     ])
   },
@@ -38919,8 +38923,11 @@ var staticRenderFns = [
     return _c("div", [
       _c("img", {
         staticClass: "left-menu-icon",
-        staticStyle: { border: "none" },
-        attrs: { src: "/images/following.svg", alt: "" }
+        attrs: {
+          src:
+            "https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589273052/samples/inspirations/following_guhswc.svg",
+          alt: "view profile icon"
+        }
       })
     ])
   },
@@ -38931,7 +38938,11 @@ var staticRenderFns = [
     return _c("div", [
       _c("img", {
         staticClass: "left-menu-icon",
-        attrs: { src: "/images/posts.png", alt: "" }
+        attrs: {
+          src:
+            "https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272373/samples/inspirations/posts_jbdfhv.png",
+          alt: "posts icon"
+        }
       })
     ])
   },
@@ -38942,7 +38953,11 @@ var staticRenderFns = [
     return _c("div", [
       _c("img", {
         staticClass: "left-menu-icon",
-        attrs: { src: "/images/draft.png", alt: "" }
+        attrs: {
+          src:
+            "https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272391/samples/inspirations/draft_s5t5he.png",
+          alt: "drafts icon"
+        }
       })
     ])
   },
@@ -38953,7 +38968,11 @@ var staticRenderFns = [
     return _c("div", [
       _c("img", {
         staticClass: "left-menu-icon",
-        attrs: { src: "/images/followers.svg", alt: "users icon" }
+        attrs: {
+          src:
+            "https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589273033/samples/inspirations/followers_fxhhsb.svg",
+          alt: "followers icon"
+        }
       })
     ])
   },
@@ -38964,7 +38983,11 @@ var staticRenderFns = [
     return _c("div", [
       _c("img", {
         staticClass: "left-menu-icon",
-        attrs: { src: "/images/following.svg", alt: "users icon" }
+        attrs: {
+          src:
+            "https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589273052/samples/inspirations/following_guhswc.svg",
+          alt: "following icon"
+        }
       })
     ])
   }

@@ -212,7 +212,7 @@
                             <h1>INSPIRATIONS</h1>
                         </div>
                         <div>
-                            <img src="/images/bulb.svg" alt="">
+                            <img src="https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589271802/samples/inspirations/bulb_jdhst2.svg" alt="">
                         </div>                    
                     </div>
                 </a>

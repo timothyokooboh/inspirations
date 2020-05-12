@@ -20,7 +20,7 @@
             146deg, 
             rgba(80, 26, 62, 0.69) 37%,
             rgba(80, 26, 62, 0.69) 76%), 
-            url('/images/laughter-compressor.jpg');
+            url('https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/q_auto,f_auto/v1589270698/samples/inspirations/laughter-compressor_smpjmf.jpg');
             background-size: cover;
             width: 100%;
             height: 100vh;
@@ -71,7 +71,7 @@
             146deg, 
             rgba(80, 26, 62, 0.69) 37%,
             rgba(80, 26, 62, 0.69) 76%), 
-            url('/images/sharing-compressor.jpg');
+            url('https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589271530/samples/inspirations/sharing-compressor_fnvwyq.jpg');
         background-size: cover;
         width: 100%;
         height: 100vh;

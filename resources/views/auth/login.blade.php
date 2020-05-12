@@ -6,7 +6,7 @@
         }
 
         body {
-            background: url('/images/water-compressor.jpg');
+            background: url('https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272532/samples/inspirations/water-compressor_tivuui.jpg');
             object-fit: cover;
             background-size:cover;
             width: 100%;
@@ -157,7 +157,7 @@
                         @enderror
                     </div>
                     <div>
-                        <img src="/images/email-compressor.png" alt="" class="form-icon">
+                        <img src="https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272256/samples/inspirations/email-compressor_c5qqvq.png" alt="email icon" class="form-icon">
                     </div>
                 </div>
 
@@ -181,7 +181,7 @@
                         @enderror
                     </div>
                     <div>
-                        <img src="/images/key-compressor.png" alt="" class="form-icon">
+                        <img src="https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272283/samples/inspirations/key-compressor_brkjmb.png" alt="password icon" class="form-icon">
                     </div>
                 </div>
 

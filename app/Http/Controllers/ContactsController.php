@@ -43,7 +43,7 @@ class ContactsController extends Controller
             'message' => ['required']
         ]);
 
-        Mail::to('inspirations@gmail.com')
+        Mail::to('mail.findinspirations.info')
         ->send(new ContactUsMail(request('name'), request('email'), request('message')));
 
         return redirect(route('contacts.create'))->with('success', 'Thanks for contacting Inspirations. Your message has been delivered successfully.');
