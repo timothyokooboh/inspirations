@@ -8,6 +8,8 @@
 
         .offline-view > div {
             margin-bottom: 20px;
+            line-height: 50px;
+            letter-spacing: 1.08px;
         }
     </style>
 @endsection
