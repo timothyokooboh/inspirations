@@ -154,15 +154,12 @@
     </div>
     <div class="footer">
         <div>
-            <a href="https://timothyokooboh.github.io/portfolio/dist/">     
+            <a href="https://timothyokooboh.github.io/portfolio/#/">     
                 Developer 
             </a>
         </div>
         <div>
             <a href="{{route('contacts.create')}}"> Contact </a>
-        </div>
-        <div>
-            <a href="{{route('pages.about')}}"> About </a>
         </div>
         <div>
             <a href="{{route('pages.privacypolicy')}}">Privacy policy</a>

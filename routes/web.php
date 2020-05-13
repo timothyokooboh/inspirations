@@ -48,7 +48,6 @@ Route::get('/following', 'FollowsController@following')->name('follows.following
 
 Route::post('like/{id}', 'LikesController@store');
 
-Route::get('/about', 'PagesController@about')->name('pages.about');
 Route::get('/privacypolicy', 'PagesController@privacypolicy')->name('pages.privacypolicy');
 
 Route::resource('contacts', 'ContactsController');
