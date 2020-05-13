@@ -93,7 +93,18 @@
         @csrf
         <div>
           <label for="title"> Post Title </label> <br>
-          <input type="text" id="title" class="input" name="title" >
+          <input 
+            type = "text" 
+            id = "title" 
+            class = "input @error('title') is-invalid @enderror" 
+            value = "{{ old('title') }} "
+            name = "title" 
+            >
+            @error('title')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
         </div>
         <div>
           <label for="cover-photo"> Cover Photo </label> <br>
@@ -101,12 +112,38 @@
         </div>
         <div>
           <label for="story"> Post Content </label> <br>
-          <textarea id="story" name="story"  ></textarea>
+
+          <textarea 
+          id="story" 
+          name="story"  
+          class="@error('story') is-invalid @enderror" 
+          >
+          {{ old('story') }}
+          </textarea>
+          @error('story')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+
         </div>
         <div>
           <label for="tags"> Tags (optional) </label>
           <p> Separate tags with comma </p>
-          <input type="text" id="tags" class="input" name="tags" placeholder="e.g. health, relationships, career">
+          <input 
+            type="text" 
+            id="tags" 
+            class = "input @error('tags') is-invalid @enderror" 
+            value = "{{ old('tags') }} "
+            name="tags" 
+            placeholder="e.g. health, relationships, career"
+
+            >
+          @error('tags')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
         </div>
         <div>
           <p> Mode </p>
