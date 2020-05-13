@@ -1,28 +1,28 @@
 <template>
 
     <div class="share-stories">
-        <div class="lazy">
+        <div class="lazy-load">
             <h2>Are you a Covid-19 survivor?</h2>
             <h4>Share your story. Someone needs to hear it to keep hope alive.</h4>
             <div>
               <a :href = "allStories">See all stories</a>
             </div>
         </div>
-        <div  class="lazy">
+        <div  class="lazy-load">
             <h2>Are you a breast cancer survivor?</h2>
             <h4>Share your experience. Uplift a soul.</h4>
             <div>
               <a :href = "allStories">See all stories</a>
             </div>
         </div>
-        <div  class="lazy">
+        <div  class="lazy-load">
             <h2> Finally got your dream job? </h2>
             <h4> Share your insights. Someone could learn from you. </h4>
             <div>
               <a :href = "allStories">See all stories</a>
             </div>
         </div>
-        <div class="lazy">
+        <div class="lazy-load">
             <h2>What success secrets have paved a way for you?</h2>
             <h4>Share your knowledge. Sharing is caring.</h4>
             <div>
@@ -36,15 +36,13 @@
 export default {
   props: ['allStories'],
   mounted () {
-    const observees = document.querySelectorAll('.lazy');
+    const observees = document.querySelectorAll('.lazy-load');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log('visible')
-          entry.target.style.animation = `animate 2s ease-out forwards`
+          entry.target.style.animation = `animate 1s ease-out forwards`
         } else {
           entry.target.style.animation = 'none'
-          console.log('invisible')
         }
       })
     })
@@ -54,7 +52,7 @@ export default {
   }
 }
 </script>
-<style>
+<style >
   .share-stories {
     color: #501A3E;
     margin-top: 40px;
@@ -77,11 +75,11 @@ export default {
   @keyframes animate {
     from {
       opacity: 0;
-      transform: translateY(-100px);
+      transform: translateX(-100px);
     }
     to {
       opacity: 1;
-      transform: translateY(0px);
+      transform: translateX(0px);
     }
   }
 

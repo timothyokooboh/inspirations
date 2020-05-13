@@ -1,5 +1,5 @@
 <template>
-  <div class = "post-container lazyload" >
+  <div class = "post-container lazy-load-story" >
     <div v-if = "isCoverPhoto">
       <a :href = "viewPost" > 
         <img :src = "postCoverPhoto" loading = 'lazy' alt = "cover photo of the post" class ="cover-image">
@@ -51,11 +51,11 @@ export default {
     
   ],
   mounted () {
-    const observees = document.querySelectorAll('.lazyload');
+    const observees = document.querySelectorAll('.lazy-load-story');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.style.animation = `animate 1s ease-out forwards`
+          entry.target.style.animation = `animateStory 1s ease-out forwards`
         } else {
           entry.target.style.animation = 'none'
         }
@@ -68,7 +68,7 @@ export default {
 
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss" >
   .flex-me {
     display: flex;
     align-items: baseline;
@@ -106,10 +106,10 @@ export default {
     height: 50px;
     border-radius: 50%;
   }
-  .lazyload {
+  .lazy-load-story {
     opacity: 0;
   }
-  @keyframes animate {
+  @keyframes animateStory {
     from {
       opacity: 0;
       transform: translateY(-100px);
