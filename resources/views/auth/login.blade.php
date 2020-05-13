@@ -6,7 +6,7 @@
         }
 
         body {
-            background: url('https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272532/samples/inspirations/water-compressor_tivuui.jpg');
+            background: url('https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/q_auto,f_auto/v1589369351/samples/inspirations/bg_ezfsji.jpg');
             object-fit: cover;
             background-size:cover;
             width: 100%;

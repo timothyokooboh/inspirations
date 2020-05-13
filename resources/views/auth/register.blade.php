@@ -5,7 +5,7 @@
             margin-top: 85px;
         }
         body {
-            background: url('https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/f_auto,q_auto/v1589272532/samples/inspirations/water-compressor_tivuui.jpg');
+            background: url('https://res.cloudinary.com/health-hub-content-creation-and-software-development/image/upload/q_auto,f_auto/v1589369351/samples/inspirations/bg_ezfsji.jpg');
             object-fit: cover;
             background-size:cover;
             width: 100%;
@@ -129,7 +129,7 @@
     
     <div class="content-wrapper" >
         <div class="form-container">
-            <h1 id="register-headline"> Welcomes to Inspirations. <br> Sign up to get started. </h1>
+            <h1 id="register-headline"> Welcome to Inspirations. <br> Sign up to get started. </h1>
             <form method="POST" action="{{ route('register') }}" >
                 @csrf
 
