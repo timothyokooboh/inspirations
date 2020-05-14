@@ -133,10 +133,11 @@
           <input 
             type="text" 
             id="tags" 
+            placeholder="e.g. health, relationships, career"
             class = "input @error('tags') is-invalid @enderror" 
             value = "{{ old('tags') }} "
             name="tags" 
-            placeholder="e.g. health, relationships, career"
+            
 
             >
           @error('tags')
