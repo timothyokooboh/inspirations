@@ -91,7 +91,7 @@
             @csrf
             <div class = "search-post-container" >
               <div class = "search-input-container" >
-                <input type="text" name="search"> 
+                <input type="text" name="search" style="padding:5px"> 
               </div>
               <div>
                 <input type="submit" value="Search">

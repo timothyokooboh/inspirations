@@ -217,6 +217,3 @@
 
 @endsection
 
-
-
-* * * * * /usr/local/bin/php /var/www/laravel/artisan schedule:run 1>> /dev/null 2>&1
